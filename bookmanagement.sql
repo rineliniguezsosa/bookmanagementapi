@@ -1,0 +1,8 @@
+CREATE TABLE Authors (
+	id INT PRIMARY KEY IDENTITY(1,1),
+	firstname VARCHAR(50) NOT NULL,
+	lastname VARCHAR(50) NOT NULL,
+	birthdate DATE NULL,
+	nationality VARCHAR(50) NULL,
+	created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

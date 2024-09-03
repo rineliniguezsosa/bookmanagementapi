@@ -29,3 +29,20 @@ CREATE TABLE Users (
 	password VARCHAR(16) NOT NULL,
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE Books (
+	id INT PRIMARY KEY IDENTITY(1,1),
+	title VARCHAR(150) NOT NULL,
+	isbn VARCHAR(20) UNIQUE NOT NULL,
+	publication_date DATE NULL, 
+	number_of_pages INT NULL,
+	author_id INT NOT NULL,
+	publisher_id INT NOT NULL,
+	genre_id INT NOT NULL,
+	FOREIGN KEY (author_id) 
+		REFERENCES Authors(id),
+	FOREIGN KEY (publisher_id)
+		REFERENCES Publishers(id),
+	FOREIGN KEY (genre_id)
+		REFERENCES Genres(id)
+);

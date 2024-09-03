@@ -46,3 +46,12 @@ CREATE TABLE Books (
 	FOREIGN KEY (genre_id)
 		REFERENCES Genres(id)
 );
+
+CREATE TABLE BookAuthors (
+	book_id INT NOT NULL,
+	author_id INT NOT NULL,
+	FOREIGN KEY (book_id)
+		REFERENCES Books(id),
+	FOREIGN KEY (author_id)
+		REFERENCES Authors(id)
+);

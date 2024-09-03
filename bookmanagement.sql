@@ -55,3 +55,16 @@ CREATE TABLE BookAuthors (
 	FOREIGN KEY (author_id)
 		REFERENCES Authors(id)
 );
+
+CREATE TABLE Reviews (
+	id INT PRIMARY KEY IDENTITY(1,1),
+	content TEXT NOT NULL,
+	rating TINYINT NOT NULL CHECK(rating BETWEEN 1 AND 5),
+	book_id INT NOT NULL,
+	user_id INT NOT NULL,
+	FOREIGN KEY (book_id)
+		REFERENCES Books(id),
+	FOREIGN KEY (user_id)
+		REFERENCES Users(id),
+	created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

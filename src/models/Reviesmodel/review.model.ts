@@ -4,4 +4,7 @@ import { Entity, PrimaryGeneratedColumn, Column,ManyToOne } from "typeorm"
 export class ReviewsEntity {
     @PrimaryGeneratedColumn()
     id!:number;
+
+    @Column({type:'text',nullable:false})
+    content!:string
 }

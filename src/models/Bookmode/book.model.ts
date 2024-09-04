@@ -5,4 +5,6 @@ export class BooksEntity {
     @PrimaryGeneratedColumn()
     id!:number;
 
+    @Column({type:'varchar',length:150,nullable:true})
+    title!:string
 }

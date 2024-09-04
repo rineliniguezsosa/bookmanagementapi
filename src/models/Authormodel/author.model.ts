@@ -10,4 +10,7 @@ export class AuthorsEntity {
 
     @Column({type:'varchar',length:50,nullable:false})
     lastname!:string
+
+    @Column({type:'date',nullable:true})
+    birthdate!:Date
 }

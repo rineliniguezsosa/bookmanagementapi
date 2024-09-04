@@ -13,4 +13,7 @@ export class AuthorsEntity {
 
     @Column({type:'date',nullable:true})
     birthdate!:Date
+
+    @Column({type:'varchar',nullable:true,length:50})
+    nationality!:string
 }

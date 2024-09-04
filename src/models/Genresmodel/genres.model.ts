@@ -11,4 +11,7 @@ export class GenresEntity {
 
     @Column({type:'text',nullable:false})
     description!:string
+
+    @Column({type:'timestamp'})
+    created_at!:Date
 }

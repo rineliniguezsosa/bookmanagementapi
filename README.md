@@ -12,3 +12,8 @@ This is a chat application project built using (TypeORM, Express, Node.js, SQL S
 - [Author](#author)
 - [Requirements](#requirements)
 - [Install and Deployment](#install)
+
+
+## Author
+
+- Rinel iñiguez

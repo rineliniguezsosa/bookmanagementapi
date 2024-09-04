@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column,ManyToOne } from "typeorm"
 import { AuthorsEntity } from "../Authormodel/author.model";
 import { PublisherEntity } from "../Publishermodel/publisher.model";
+import { GenresEntity } from "../Genresmodel/genres.model";
 
 @Entity('Books')
 export class BooksEntity {
@@ -27,4 +28,7 @@ export class BooksEntity {
 
     @ManyToOne(()=> PublisherEntity, (publisher) => publisher.books, {nullable:false})
     publisher_id!:AuthorsEntity;
+
+    @ManyToOne(()=> GenresEntity, (genres) => genres.books, {nullable:false})
+    genre_id!:GenresEntity;
 }

@@ -4,7 +4,7 @@
 
 # Personal proyect - bookmanagementapi
 
-This is a chat application project built using (TypeORM, Express, Node.js, SQL Server, Typescript)
+This is a API built using (TypeORM, Express, Node.js, SQL Server, Typescript)
 
 
 ## Table of contents

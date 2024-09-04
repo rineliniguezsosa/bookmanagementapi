@@ -21,4 +21,6 @@ export class BooksEntity {
     @Column({type:'timestamp'})
     created_at!:Date
 
+    @ManyToOne(()=> AuthorsEntity, (author) => author.books)
+    author!:AuthorsEntity;
 }

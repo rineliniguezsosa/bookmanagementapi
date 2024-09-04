@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column,ManyToOne } from "typeorm"
 import { AuthorsEntity } from "../Authormodel/author.model";
+import { PublisherEntity } from "../Publishermodel/publisher.model";
 
 @Entity('Books')
 export class BooksEntity {
@@ -21,6 +22,9 @@ export class BooksEntity {
     @Column({type:'timestamp'})
     created_at!:Date
 
-    @ManyToOne(()=> AuthorsEntity, (author) => author.books)
+    @ManyToOne(()=> AuthorsEntity, (author) => author.books, {nullable:false})
     author_id!:AuthorsEntity;
+
+    @ManyToOne(()=> PublisherEntity, (publisher) => publisher.books, {nullable:false})
+    publisher_id!:AuthorsEntity;
 }

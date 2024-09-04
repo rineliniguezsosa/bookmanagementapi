@@ -14,4 +14,7 @@ export class UserEntity {
 
     @Column({type:'smallint',nullable:true})
     established_year!:number
+
+    @Column({type:'timestamp'})
+    created_at!:Date
 }

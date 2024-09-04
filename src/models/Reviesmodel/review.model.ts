@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column,ManyToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column,ManyToOne,Check } from "typeorm"
 
 @Entity('Reviews')
 export class ReviewsEntity {
@@ -7,4 +7,7 @@ export class ReviewsEntity {
 
     @Column({type:'text',nullable:false})
     content!:string
+
+    @Column({type:'tinyint',nullable:false})
+    rating!:string
 }

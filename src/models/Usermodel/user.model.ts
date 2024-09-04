@@ -8,4 +8,7 @@ export class UserEntity {
 
     @Column({type:'varchar',length:100,unique:true,nullable:false})
     name!:string
+
+    @Column({type:'varchar',length:50,nullable:true})
+    country!:string
 }

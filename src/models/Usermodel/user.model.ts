@@ -7,7 +7,7 @@ export class UserEntity {
     id!:number;
 
     @Column({type:'varchar',length:100,unique:true,nullable:false})
-    name!:string
+    username!:string
 
     @Column({type:'varchar',length:50,nullable:true})
     country!:string

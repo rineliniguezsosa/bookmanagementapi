@@ -16,4 +16,7 @@ export class AuthorsEntity {
 
     @Column({type:'varchar',nullable:true,length:50})
     nationality!:string
+
+    @Column({type:'timestamp'})
+    created_at!:Date
 }

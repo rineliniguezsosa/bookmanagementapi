@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
+import { BooksEntity } from "../Bookmodel/book.model";
 
 
 @Entity('Publishers')
@@ -14,4 +15,7 @@ export class PublisherEntity {
 
     @Column({type:'timestamp'})
     created_at!:Date
+
+    @OneToMany(()=> BooksEntity,(book)=> book.publisher_id)
+    books!:BooksEntity[]
 }

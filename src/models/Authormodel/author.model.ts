@@ -7,4 +7,7 @@ export class AuthorsEntity {
 
     @Column({type:'varchar',length:50,nullable:false})
     firstname!:string
+
+    @Column({type:'varchar',length:50,nullable:false})
+    lastname!:string
 }

@@ -22,5 +22,5 @@ export class BooksEntity {
     created_at!:Date
 
     @ManyToOne(()=> AuthorsEntity, (author) => author.books)
-    author!:AuthorsEntity;
+    author_id!:AuthorsEntity;
 }

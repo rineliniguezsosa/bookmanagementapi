@@ -11,4 +11,7 @@ export class UserEntity {
 
     @Column({type:'varchar',length:50,nullable:true})
     country!:string
+
+    @Column({type:'smallint',nullable:true})
+    established_year!:number
 }

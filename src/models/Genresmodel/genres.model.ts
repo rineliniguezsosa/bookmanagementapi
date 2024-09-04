@@ -8,4 +8,7 @@ export class GenresEntity {
 
     @Column({type:'varchar',length:100,unique:true,nullable:true})
     name!:string;
+
+    @Column({type:'text',nullable:false})
+    description!:string
 }

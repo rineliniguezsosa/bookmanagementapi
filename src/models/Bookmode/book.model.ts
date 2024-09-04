@@ -17,4 +17,7 @@ export class BooksEntity {
     @Column({type:'int',nullable:true})
     number_of_pages!:number
 
+    @Column({type:'timestamp'})
+    created_at!:Date
+
 }

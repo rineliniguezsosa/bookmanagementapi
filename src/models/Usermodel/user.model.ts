@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column,OneToMany } from "typeorm"
+import { ReviewsEntity } from "../Reviesmodel/review.model";
 
 
 @Entity('Users')
@@ -17,4 +18,7 @@ export class UserEntity {
 
     @Column({type:'timestamp'})
     created_at!:Date
+
+    @OneToMany(()=> ReviewsEntity, (reviews)=> reviews.user_id)
+    reviews!:ReviewsEntity[]
 }

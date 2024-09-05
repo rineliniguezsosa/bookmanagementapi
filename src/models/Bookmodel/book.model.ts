@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column,ManyToOne,ManyToMany } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column,ManyToOne,OneToMany } from "typeorm"
 import { AuthorsEntity } from "../Authormodel/author.model";
 import { PublisherEntity } from "../Publishermodel/publisher.model";
 import { GenresEntity } from "../Genresmodel/genres.model";
@@ -33,6 +33,6 @@ export class BooksEntity {
     @ManyToOne(()=> GenresEntity, (genres) => genres.books, {nullable:false})
     genre_id!:GenresEntity;
 
-    @ManyToMany(()=> ReviewsEntity, (review)=> review.book_id)
-    reviews!:ReviewsEntity[]
+    @OneToMany(() => ReviewsEntity, (review) => review.book_id)
+    reviews!: ReviewsEntity[];
 }

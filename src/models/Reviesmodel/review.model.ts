@@ -17,7 +17,7 @@ export class ReviewsEntity {
     @ManyToOne(()=> BooksEntity, (book)=> book.reviews, {nullable:false})
     book_id!:BooksEntity
 
-    @ManyToOne(()=> UserEntity, (book)=> book.reviews, {nullable:false})
+    @ManyToOne(()=> UserEntity, (user)=> user.reviews, {nullable:false})
     user_id!:BooksEntity
 
     @Column({type:'timestamp'})

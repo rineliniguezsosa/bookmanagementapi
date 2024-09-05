@@ -7,6 +7,9 @@ export class PublisherEntity {
     @PrimaryGeneratedColumn()
     id!:number;
 
+    @Column({type:'varchar',length:30,nullable:false})
+    name!:string
+
     @Column({type:'varchar',length:50,nullable:true})
     country!:string
 

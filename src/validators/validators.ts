@@ -7,5 +7,6 @@ export const uservalidation = [
     check('username').isAlpha().withMessage('El campo username solo acepta letras !!'),
     check('username','El campo debe de tener una longitud de 10 caracteres como minimo').isLength({min:10}),
     check('email','El campo debe de estar en un formato valido de email').isEmail(),
-    check('email','El campo email no es vacio !!').notEmpty()
+    check('email','El campo email no es vacio !!').notEmpty(),
+    check('password','El campo password debe de tener 10 caracteres como minimo').isLength({min:10})
 ]

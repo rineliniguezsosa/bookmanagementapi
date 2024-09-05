@@ -6,6 +6,7 @@ import { userRoutes } from './routes';
 dotenv.config()
 
 const app = express()
+app.use('/user',userRoutes)
 connectdb()
 
 app.listen(process.env.PORT,()=>{

@@ -7,10 +7,10 @@ export class GenresEntity {
     @PrimaryGeneratedColumn()
     id!:number;
 
-    @Column({type:'varchar',length:100,unique:true,nullable:true})
+    @Column({type:'varchar',length:100,unique:true,nullable:false})
     name!:string;
 
-    @Column({type:'text',nullable:false})
+    @Column({type:'text',nullable:true})
     description!:string
 
     @Column({type:'timestamp'})

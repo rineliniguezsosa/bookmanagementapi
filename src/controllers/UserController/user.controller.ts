@@ -1,5 +1,5 @@
 import { Request,Response } from 'express';
 
-const saveUser = async(req:Request,resp:Response) =>{
+export const saveUser = async(req:Request,resp:Response) =>{
 
 }

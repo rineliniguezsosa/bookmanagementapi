@@ -1,7 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column,ManyToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column,ManyToOne,ManyToMany } from "typeorm"
 import { AuthorsEntity } from "../Authormodel/author.model";
 import { PublisherEntity } from "../Publishermodel/publisher.model";
 import { GenresEntity } from "../Genresmodel/genres.model";
+import { ReviewsEntity } from "../Reviesmodel/review.model";
 
 @Entity('Books')
 export class BooksEntity {
@@ -31,4 +32,7 @@ export class BooksEntity {
 
     @ManyToOne(()=> GenresEntity, (genres) => genres.books, {nullable:false})
     genre_id!:GenresEntity;
+
+    @ManyToMany(()=> ReviewsEntity, (review)=> review.book_id)
+    reviews!:ReviewsEntity[]
 }

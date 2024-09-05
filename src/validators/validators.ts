@@ -9,5 +9,6 @@ export const uservalidation = [
     check('email','El campo debe de estar en un formato valido de email').isEmail(),
     check('email','El campo email no es vacio !!').notEmpty(),
     check('password','El campo password debe de tener 10 caracteres como minimo').isLength({min:10}),
-    check('password','El campo password es requierido !!').notEmpty()
+    check('password','El campo password es requierido !!').notEmpty(),
+    validaterrors
 ]

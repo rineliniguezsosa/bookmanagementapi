@@ -79,3 +79,5 @@ ALTER TABLE Publishers ALTER COLUMN name VARCHAR(30) NOT NULL;
 
 ALTER TABLE Publishers ADD CONSTRAINT uniquename UNIQUE (name);
 -- SELECT
+
+--DELETE 

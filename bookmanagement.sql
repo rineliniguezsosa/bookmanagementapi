@@ -81,3 +81,5 @@ ALTER TABLE Publishers ADD CONSTRAINT uniquename UNIQUE (name);
 -- SELECT
 
 --DELETE 
+
+DROP TABLE BookAuthors;

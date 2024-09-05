@@ -15,4 +15,7 @@ export class ReviewsEntity {
 
     @ManyToOne(()=> BooksEntity, (book)=> book.reviews, {nullable:false})
     book_id!:BooksEntity
+
+    @Column({type:'timestamp'})
+    created_at!:Date
 }

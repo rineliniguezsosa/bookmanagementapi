@@ -54,3 +54,7 @@ export const authorvalidation = [
         .isLength({ max: 50 }).withMessage('El campo nationality debe de tener una longitud de 50 caracteres como minimo')
         .isAlpha().withMessage('El campo nationality solo acepta letras !!')
 ]
+
+export const publishersvalidation = [
+    
+]

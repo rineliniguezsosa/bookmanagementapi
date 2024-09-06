@@ -1,5 +1,5 @@
 import { Router } from 'express';
 import { saveBookGenre } from '../../controllers';
-export const genresRoutes = Router();
+export const bookgenresRoutes = Router();
 
-genresRoutes.post('/save',saveBookGenre)
+bookgenresRoutes.post('/save',saveBookGenre)

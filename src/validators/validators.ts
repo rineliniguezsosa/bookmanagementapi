@@ -56,5 +56,10 @@ export const authorvalidation = [
 ]
 
 export const publishersvalidation = [
-    
+    body('name')
+        .trim()
+        .customSanitizer(value => value.toLowerCase())
+        .isLength({ max: 30 }).withMessage('El campo name debe de tener una longitud de 30 caracteres como minimo')
+        .notEmpty().withMessage('El campo name es requerido !!')
+        .isAlpha().withMessage('El campo name solo acepta letras !!')
 ]

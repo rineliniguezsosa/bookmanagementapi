@@ -1,1 +1,2 @@
-import { Request,Response } from 'express';
+import { Router } from 'express';
+export const publisherRoutes = Router()

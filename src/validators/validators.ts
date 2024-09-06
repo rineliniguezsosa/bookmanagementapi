@@ -23,4 +23,5 @@ export const bookgenrevalidation = [
         .trim()
         .customSanitizer(value => value.toLowerCase())
         .notEmpty().withMessage('El campo name es requerido !!')
+        .isAlpha().withMessage('El campo name solo acepta letras !!')
 ]

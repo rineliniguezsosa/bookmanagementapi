@@ -1,4 +1,4 @@
-import { check } from 'express-validator'
+import { body } from 'express-validator'
 import { validaterrors } from '../middleware'
 
 
@@ -32,5 +32,5 @@ export const bookgenrevalidation = [
 ]
 
 export const authorvalidation = [
-    
+
 ]

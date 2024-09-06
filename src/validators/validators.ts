@@ -30,3 +30,7 @@ export const bookgenrevalidation = [
         .optional()
         .isAlpha().withMessage('El campo description solo acepta letras !!')
 ]
+
+export const authorvalidation = [
+    
+]

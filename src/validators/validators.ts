@@ -25,4 +25,6 @@ export const bookgenrevalidation = [
         .notEmpty().withMessage('El campo name es requerido !!')
         .isAlpha().withMessage('El campo name solo acepta letras !!')
         .isLength({ max: 50 }).withMessage('El campo name debe de tener una longitud de 50 caracteres como minimo'),
+    check('description')
+        .trim()
 ]

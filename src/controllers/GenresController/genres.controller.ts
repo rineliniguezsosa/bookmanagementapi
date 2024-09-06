@@ -5,6 +5,8 @@ import { GenresEntity } from '../../models';
 export const saveBookGenre = async(req:Request,resp:Response) =>{
     try {
         const genresRepository = AppDataSource.getRepository(GenresEntity);
+
+        await genresRepository.save(req.body)
     } catch (error) {
         
     }

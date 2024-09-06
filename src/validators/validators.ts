@@ -68,4 +68,7 @@ export const publishersvalidation = [
         .customSanitizer(value => value.toLowerCase())
         .isLength({ max: 50 }).withMessage('El campo country debe de tener una longitud de 50 caracteres como minimo')
         .isAlpha().withMessage('El campo country solo acepta letras !!'),
+    body('established_year')
+        .optional()
+        .isInt({min:1980,max:2024}).withMessage('Establece un año valido entre 1980 y 2024')
 ]

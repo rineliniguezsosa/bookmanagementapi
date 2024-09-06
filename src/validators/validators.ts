@@ -44,4 +44,8 @@ export const authorvalidation = [
         .notEmpty().withMessage('El campo lastname es requerido !!')
         .isAlpha().withMessage('El campo  lastname solo acepta letras !!')
         .isLength({ max: 50 }).withMessage('El campo lastname debe de tener una longitud de 50 caracteres como minimo'),
+    body('birthdate')
+        .trim()
+        .optional()
+        .isDate({ format:'DD-MM-YYYY'}).withMessage('El campo birthdate necesito de un formato dia/mes/año')
 ]

@@ -17,3 +17,9 @@ export const uservalidation = [
         .isLength({ max: 10 }).withMessage('El campo password debe de tener una longitud de 10 caracteres como minimo'),
     validaterrors
 ]
+
+export const bookgenrevalidation = [
+    check('name')
+        .trim()
+        .customSanitizer(value => value.toLowerCase())
+]

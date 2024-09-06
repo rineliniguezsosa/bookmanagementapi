@@ -1,5 +1,5 @@
 import { Request,Response } from 'express';
 
-const saveBookGenre = async(req:Request,resp:Response) =>{
+export const saveBookGenre = async(req:Request,resp:Response) =>{
 
 }

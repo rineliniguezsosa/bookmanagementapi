@@ -80,7 +80,10 @@ ALTER TABLE Publishers ALTER COLUMN name VARCHAR(30) NOT NULL;
 ALTER TABLE Publishers ADD CONSTRAINT uniquename UNIQUE (name);
 
 ALTER TABLE users ALTER COLUMN password VARCHAR(10) NOT NULL;
+
 -- SELECT
+
+SELECT id,name,description,created_at FROM Genres;
 
 --DELETE 
 

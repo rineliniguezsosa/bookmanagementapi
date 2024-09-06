@@ -22,4 +22,5 @@ export const bookgenrevalidation = [
     check('name')
         .trim()
         .customSanitizer(value => value.toLowerCase())
+        .notEmpty().withMessage('El campo name es requerido !!')
 ]

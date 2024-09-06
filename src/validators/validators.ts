@@ -36,5 +36,10 @@ export const authorvalidation = [
         .trim()
         .customSanitizer(value => value.toLowerCase())
         .notEmpty().withMessage('El campo firstname es requerido !!')
-        .isAlpha().withMessage('El campo firstrname solo acepta letras !!')
+        .isAlpha().withMessage('El campo firstrname solo acepta letras !!'),
+    body('lastname')
+        .trim()
+        .customSanitizer(value => value.toLowerCase())
+        .notEmpty().withMessage('El campo lastname es requerido !!')
+        .isAlpha().withMessage('El campo  lastname solo acepta letras !!'),
 ]

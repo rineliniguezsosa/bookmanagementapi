@@ -21,6 +21,11 @@ export const saveUser = async(req:Request,resp:Response) =>{
         })
     } catch (error) {
         console.log(error);
+
+        resp.status(400).json({
+            status:false,
+            message:'Porfavor vuelva a intentar, algo salio mal :('
+        })
         
     }
 }

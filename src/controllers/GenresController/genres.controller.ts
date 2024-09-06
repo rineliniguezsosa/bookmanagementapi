@@ -6,7 +6,12 @@ export const saveBookGenre = async(req:Request,resp:Response) =>{
     try {
         const genresRepository = AppDataSource.getRepository(GenresEntity);
 
-        await genresRepository.save(req.body)
+        const data = await genresRepository.save(req.body)
+
+        resp.status(200).json({
+            status:true,
+            menssage:data
+        })
     } catch (error) {
         
     }

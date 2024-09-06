@@ -61,5 +61,11 @@ export const publishersvalidation = [
         .customSanitizer(value => value.toLowerCase())
         .isLength({ max: 30 }).withMessage('El campo name debe de tener una longitud de 30 caracteres como minimo')
         .notEmpty().withMessage('El campo name es requerido !!')
-        .isAlpha().withMessage('El campo name solo acepta letras !!')
+        .isAlpha().withMessage('El campo name solo acepta letras !!'),
+    body('country')
+        .trim()
+        .optional()
+        .customSanitizer(value => value.toLowerCase())
+        .isLength({ max: 50 }).withMessage('El campo country debe de tener una longitud de 50 caracteres como minimo')
+        .isAlpha().withMessage('El campo country solo acepta letras !!'),
 ]

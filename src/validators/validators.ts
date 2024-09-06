@@ -32,5 +32,9 @@ export const bookgenrevalidation = [
 ]
 
 export const authorvalidation = [
-
+    body('firstname')
+        .trim()
+        .customSanitizer(value => value.toLowerCase())
+        .notEmpty().withMessage('El campo firstname es requerido !!')
+        .isAlpha().withMessage('El campo firstrname solo acepta letras !!')
 ]

@@ -47,5 +47,5 @@ export const authorvalidation = [
     body('birthdate')
         .trim()
         .optional()
-        .isDate({ format:'DD-MM-YYYY'}).withMessage('El campo birthdate necesito de un formato dia/mes/año')
+        .isDate({ format:'DD-MM-YYYY'}).withMessage('El campo birthdate necesita de un formato dia/mes/año')
 ]

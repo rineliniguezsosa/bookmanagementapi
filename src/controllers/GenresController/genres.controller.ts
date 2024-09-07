@@ -21,3 +21,18 @@ export const saveBookGenre = async(req:Request,resp:Response) =>{
         })
     }
 }
+
+export const getAllBookGenres = async(req:Request,resp:Response) =>{
+    try {
+        const genresRepository = AppDataSource.getRepository(GenresEntity);
+
+        const data = await genresRepository.find();
+
+        resp.status(200).json({
+            status:true,
+            message:data
+        })
+    } catch (error) {
+        
+    }
+}

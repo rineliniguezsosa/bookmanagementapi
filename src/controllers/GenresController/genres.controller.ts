@@ -54,6 +54,12 @@ export const getBookGenresById = async(req:Request,resp:Response) =>{
         if(!data){
          throw new Error(`El id:${idbookgenre} proporcionado no existe`)
         }
+
+        resp.status(200).json({
+            status:true,
+            message:data
+        })
+        
     } catch (error) {
         
     }

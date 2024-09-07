@@ -96,3 +96,4 @@ INSERT INTO Publishers(name,country,established_year) VALUES ('Bloomsbury','Unit
 INSERT INTO Users(username,email,password) VALUES ('storyfan','user3@example.com','mypass789');
 INSERT INTO Books(title,isbn,publication_date,number_of_pages,author_id,publisher_id,genre_id) 
 VALUES ('Harry Potter y la piedra filosofal','978-0747532743','1997-06-26',223,1,1,1);
+INSERT INTO Reviews(content,rating,book_id,user_id) VALUES ('Una historia mágica y envolvente.',5,1,1);

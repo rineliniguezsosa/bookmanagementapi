@@ -82,7 +82,7 @@ ALTER TABLE Publishers ADD CONSTRAINT uniquename UNIQUE (name);
 ALTER TABLE users ALTER COLUMN password VARCHAR(10) NOT NULL;
 
 -- SELECT
-
+SELECT id,firstname,lastname,birthdate,nationality,created_at FROM Authors;
 SELECT id,name,description,created_at FROM Genres;
 
 --DELETE 

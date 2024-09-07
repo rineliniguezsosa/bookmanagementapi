@@ -43,5 +43,9 @@ export const getAllBookGenres = async(req:Request,resp:Response) =>{
 }
 
 export const getBookGenresById = async(req:Request,resp:Response) =>{
-
+    try {
+        
+    } catch (error) {
+        
+    }
 }

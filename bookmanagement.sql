@@ -94,3 +94,5 @@ INSERT INTO Authors(firstname,lastname,birthdate,nationality) VALUES ('J.K','Row
 INSERT INTO Genres(name,description) VALUES ('fantasía','Libros con elementos mágicos.');
 INSERT INTO Publishers(name,country,established_year) VALUES ('Bloomsbury','United Kingdom',1986);
 INSERT INTO Users(username,email,password) VALUES ('storyfan','user3@example.com','mypass789');
+INSERT INTO Books(title,isbn,publication_date,number_of_pages,author_id,publisher_id,genre_id) 
+VALUES ('Harry Potter y la piedra filosofal','978-0747532743','1997-06-26',223,1,1,1);

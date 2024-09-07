@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm"
-import { UserEntity,ReviewsEntity,GenresEntity,AuthorsEntity } from "../models";
+import { UserEntity,ReviewsEntity,GenresEntity,AuthorsEntity,PublisherEntity } from "../models";
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
     username: process.env.USERNAME,
     password: process.env.PASSWORD,
     database: process.env.DB,
-    entities:[GenresEntity,AuthorsEntity],
+    entities:[GenresEntity,AuthorsEntity,PublisherEntity],
     options: {
       encrypt: false,
       trustServerCertificate: true,

@@ -90,11 +90,11 @@ SELECT id,content,rating,book_id,user_id,created_at FROM Reviews;
 SELECT b.id,b.title,b.isbn,b.publication_date,b.number_of_pages,a.firstname AS Author,p.name AS Publisher,g.name AS Book_type
 FROM Books b
 INNER JOIN Authors a
-ON a.id = b.id
+ON a.id = b.author_id
 INNER JOIN Publishers p
-ON p.id = b.id
+ON p.id = b.publisher_id
 INNER JOIN Genres g
-ON g.id = b.id;
+ON g.id = b.genre_id;
 --DELETE 
 
 DROP TABLE BookAuthors;

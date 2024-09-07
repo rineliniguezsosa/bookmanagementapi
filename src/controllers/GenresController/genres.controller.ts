@@ -50,12 +50,15 @@ export const getBookGenresById = async(req:Request,resp:Response) =>{
         const genresRepository = AppDataSource.getRepository(GenresEntity);
 
         const data = await genresRepository.find({ where: { id: idbookgenre }})
-
-        if(!data){
-         throw new Error(`El id:${idbookgenre} proporcionado no existe`)
+        
+        if(data.length === 0){
+          return resp.status(400).json({
+            status:false,
+            message:`El id:${idbookgenre} no existe`
+          })
         }
 
-        resp.status(200).json({
+        return resp.status(200).json({
             status:true,
             message:data
         })
@@ -63,5 +66,9 @@ export const getBookGenresById = async(req:Request,resp:Response) =>{
     } catch (error) {
         console.log(error);
         
+        return resp.status(400).json({
+            status:false,
+            message:'Porfavor vuelva a intentar, algo salio mal :('
+        })
     }
 }

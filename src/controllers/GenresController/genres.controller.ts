@@ -44,7 +44,8 @@ export const getAllBookGenres = async(req:Request,resp:Response) =>{
 
 export const getBookGenresById = async(req:Request,resp:Response) =>{
     try {
-        
+        const { id } = req.params
+        const genresRepository = AppDataSource.getRepository(GenresEntity);
     } catch (error) {
         
     }

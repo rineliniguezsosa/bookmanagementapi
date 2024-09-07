@@ -92,3 +92,4 @@ DROP TABLE BookAuthors;
 --INSERTS
 INSERT INTO Authors(firstname,lastname,birthdate,nationality) VALUES ('J.K','Rowling','1965-07-31','British');
 INSERT INTO Genres(name,description) VALUES ('fantasía','Libros con elementos mágicos.');
+INSERT INTO Publishers(name,country,established_year) VALUES ('Bloomsbury','United Kingdom',1986);

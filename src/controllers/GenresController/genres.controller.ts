@@ -45,7 +45,15 @@ export const getAllBookGenres = async(req:Request,resp:Response) =>{
 export const getBookGenresById = async(req:Request,resp:Response) =>{
     try {
         const { id } = req.params
+        let idbookgenre = parseInt(id,10)
+
         const genresRepository = AppDataSource.getRepository(GenresEntity);
+
+        const data = await genresRepository.find({ where: { id: idbookgenre }})
+
+        if(!data){
+         throw new Error(`El id:${idbookgenre} proporcionado no existe`)
+        }
     } catch (error) {
         
     }

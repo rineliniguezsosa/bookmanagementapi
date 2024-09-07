@@ -85,7 +85,7 @@ ALTER TABLE users ALTER COLUMN password VARCHAR(10) NOT NULL;
 SELECT id,firstname,lastname,birthdate,nationality,created_at FROM Authors;
 SELECT id,name,description,created_at FROM Genres;
 SELECT id,name,country,established_year,created_at FROM Publishers;
-
+SELECT id,content,rating,book_id,user_id,created_at FROM Reviews;
 --DELETE 
 
 DROP TABLE BookAuthors;

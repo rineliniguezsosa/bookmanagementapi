@@ -88,3 +88,6 @@ SELECT id,name,description,created_at FROM Genres;
 --DELETE 
 
 DROP TABLE BookAuthors;
+
+--INSERTS
+INSERT INTO Authors(firstname,lastname,birthdate,nationality) VALUES ('J.K','Rowling','1965-07-31','British');

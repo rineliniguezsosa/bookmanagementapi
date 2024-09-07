@@ -31,6 +31,13 @@ export const bookgenrevalidation = [
         .isAlpha().withMessage('El campo description solo acepta letras !!')
 ]
 
+export const genrebyidvalidation = [
+    body('id')
+        .trim()
+        .isNumeric().withMessage('El campo id debe contener solo números')
+        .notEmpty().withMessage('El campo id debe de ser requerido')
+] 
+
 export const authorvalidation = [
     body('firstname')
         .trim()

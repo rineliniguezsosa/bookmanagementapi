@@ -86,6 +86,15 @@ SELECT id,firstname,lastname,birthdate,nationality,created_at FROM Authors;
 SELECT id,name,description,created_at FROM Genres;
 SELECT id,name,country,established_year,created_at FROM Publishers;
 SELECT id,content,rating,book_id,user_id,created_at FROM Reviews;
+
+SELECT b.id,b.title,b.isbn,b.publication_date,b.number_of_pages,a.firstname AS Author,p.name AS Publisher,g.name AS Book_type
+FROM Books b
+INNER JOIN Authors a
+ON a.id = b.id
+INNER JOIN Publishers p
+ON p.id = b.id
+INNER JOIN Genres g
+ON g.id = b.id;
 --DELETE 
 
 DROP TABLE BookAuthors;

@@ -59,8 +59,9 @@ export const getBookGenresById = async(req:Request,resp:Response) =>{
             status:true,
             message:data
         })
-        
+
     } catch (error) {
+        console.log(error);
         
     }
 }

@@ -21,3 +21,7 @@ export const saveBookPublishers = async (req:Request,resp:Response) =>{
         })
     }
 }
+
+const getAllBookPublishers = async(req:Request,resp:Response) =>{
+
+}

@@ -79,3 +79,10 @@ export const publishersvalidation = [
         .optional()
         .isInt({min:1980,max:2024}).withMessage('Establece un año valido entre 1980 y 2024')
 ]
+
+export const bookvalidation = [
+    body('title')
+        .trim()
+        .isLength({ max: 150 }).withMessage('El campo title debe de tener una longitud de 150 caracteres como minimo')
+        .notEmpty().withMessage('El campo title es requerido !!')
+]

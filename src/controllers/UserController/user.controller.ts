@@ -29,3 +29,23 @@ export const saveUser = async(req:Request,resp:Response) =>{
         
     }
 }
+
+export const getAllUsers = async(req:Request,resp:Response) =>{
+    try {
+        const userRepository = AppDataSource.getRepository(UserEntity);
+
+        const data = await userRepository.find();
+
+        return resp.status(200).json({
+            status:true,
+            message:data
+        })
+    } catch (error) {
+        console.log(error);
+        
+        return resp.status(400).json({
+            status:false,
+            message:'Porfavor vuelva a intentar, algo salio mal :('
+        })
+    }
+}

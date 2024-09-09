@@ -89,4 +89,20 @@ export const bookvalidation = [
         .trim()
         .isLength({ min: 20}).withMessage('El campo isbn debe de tener una longitud minima de 20 caracteres')
         .notEmpty().withMessage('El campo isbn es requerido !!'),
+    body('publication_date ')
+        .trim()
+        .optional()
+        .isDate({ format:'YYYY-MM-DD'}).withMessage('El campo publication-date necesita de un formato Año/Mes/Dia '),
+    body('number_of_pages')
+        .optional()
+        .isNumeric().withMessage('El campo id debe contener solo números'),
+    body('author_id')
+        .isNumeric().withMessage('El campo author_id debe contener solo números')
+        .notEmpty().withMessage('El campo author_id es requerido !!'),
+    body('publisher_id')
+        .isNumeric().withMessage('El campo publisher_id debe contener solo números')
+        .notEmpty().withMessage('El campo publishers_id es requerido !!'),
+    body('genre_id')
+        .isNumeric().withMessage('El campo genre_id debe contener solo números')
+        .notEmpty().withMessage('El campo genre_id es requerido !!'),
 ]

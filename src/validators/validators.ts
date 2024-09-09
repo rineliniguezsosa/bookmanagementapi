@@ -84,5 +84,9 @@ export const bookvalidation = [
     body('title')
         .trim()
         .isLength({ max: 150 }).withMessage('El campo title debe de tener una longitud de 150 caracteres como minimo')
-        .notEmpty().withMessage('El campo title es requerido !!')
+        .notEmpty().withMessage('El campo title es requerido !!'),
+    body('isbn')
+        .trim()
+        .isLength({ min: 20}).withMessage('El campo isbn debe de tener una longitud minima de 20 caracteres')
+        .notEmpty().withMessage('El campo isbn es requerido !!'),
 ]

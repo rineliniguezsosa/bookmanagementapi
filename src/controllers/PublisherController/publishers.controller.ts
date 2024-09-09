@@ -23,5 +23,16 @@ export const saveBookPublishers = async (req:Request,resp:Response) =>{
 }
 
 const getAllBookPublishers = async(req:Request,resp:Response) =>{
+    try {
+        const publisherRepository = AppDataSource.getRepository(PublisherEntity);
 
+        const data = await publisherRepository.find();
+
+        return resp.status(200).json({
+            status:true,
+            message:data
+        })
+    } catch (error) {
+        
+    }
 }

@@ -22,3 +22,23 @@ export const saveBookAuthor = async(req:Request,resp:Response) =>{
         
     }
 }
+
+export const getAllBookAuthors = async(req:Request,resp:Response) =>{
+    try {
+        const authorRepository = AppDataSource.getRepository(AuthorsEntity);
+
+        const data = await authorRepository.find();
+
+        return resp.status(200).json({
+            status:true,
+            message:data
+        })
+    } catch (error) {
+        console.log(error);
+        
+        return resp.status(400).json({
+            status:false,
+            message:'Porfavor vuelva a intentar, algo salio mal :('
+        })
+    }
+}

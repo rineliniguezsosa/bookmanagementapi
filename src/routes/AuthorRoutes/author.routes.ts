@@ -5,3 +5,4 @@ export const authorRoutes = Router()
 
 authorRoutes.post('/save',authorvalidation)
 authorRoutes.get("/all",getAllBookAuthors)
+authorRoutes.get('/:id')

@@ -25,16 +25,16 @@ export class BooksEntity {
     created_at!:Date
 
     @ManyToOne(()=> AuthorsEntity, (author) => author.books, {nullable:false})
-    @JoinColumn()
-    author_id!:AuthorsEntity;
+    @JoinColumn({name:'author_id'})
+    author!:AuthorsEntity;
 
     @ManyToOne(()=> PublisherEntity, (publisher) => publisher.books, {nullable:false})
-    @JoinColumn()
-    publisher_id!:AuthorsEntity;
+    @JoinColumn({name:'publisher_id'})
+    publisher!:PublisherEntity;
 
     @ManyToOne(()=> GenresEntity, (genres) => genres.books, {nullable:false})
-    @JoinColumn()
-    genre_id!:GenresEntity;
+    @JoinColumn({name:'genre_id'})
+    genre!:GenresEntity;
 
     @OneToMany(() => ReviewsEntity, (review) => review.book_id)
     reviews!: ReviewsEntity[];

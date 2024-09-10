@@ -19,6 +19,6 @@ export class UserEntity {
     @Column({type:'timestamp'})
     created_at!:Date
 
-    @OneToMany(()=> ReviewsEntity, (reviews)=> reviews.user_id)
+    @OneToMany(()=> ReviewsEntity, (reviews)=> reviews.user)
     reviews!:ReviewsEntity[]
 }

@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column,ManyToOne,Check } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column,ManyToOne,Check,JoinColumn } from "typeorm"
 import { BooksEntity } from "../Bookmodel/book.model";
 import { UserEntity } from "../Usermodel/user.model";
 
@@ -15,10 +15,12 @@ export class ReviewsEntity {
     rating!:string
 
     @ManyToOne(()=> BooksEntity, (book)=> book.reviews, {nullable:false})
-    book_id!:BooksEntity
+    @JoinColumn({name:'book_id'})
+    books!:BooksEntity
 
     @ManyToOne(()=> UserEntity, (user)=> user.reviews, {nullable:false})
-    user_id!:BooksEntity
+    @JoinColumn({name:'user_id'})
+    user!:BooksEntity
 
     @Column({type:'timestamp'})
     created_at!:Date

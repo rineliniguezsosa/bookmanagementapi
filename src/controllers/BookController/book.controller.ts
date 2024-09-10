@@ -28,9 +28,9 @@ export const allBooks = async (req:Request,resp:Response) =>{
         const bookRepository = AppDataSource.getRepository(BooksEntity);
 
         const bookQuery = bookRepository.createQueryBuilder("Books")
-        .innerJoinAndSelect('Books.author_id','Authors')
-        .innerJoinAndSelect('Books.publisher_id','Publishers')
-        .innerJoinAndSelect('Books.genre_id','Genres')
+        .innerJoinAndSelect('Books.author','Authors')
+        .innerJoinAndSelect('Books.publisher','Publishers')
+        .innerJoinAndSelect('Books.genre','Genres')
 
         const data = await bookQuery.getMany();
 

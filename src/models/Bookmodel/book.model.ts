@@ -36,6 +36,6 @@ export class BooksEntity {
     @JoinColumn({name:'genre_id'})
     genre!:GenresEntity;
 
-    @OneToMany(() => ReviewsEntity, (review) => review.book_id)
+    @OneToMany(() => ReviewsEntity, (review) => review.books)
     reviews!: ReviewsEntity[];
 }

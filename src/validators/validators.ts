@@ -106,3 +106,15 @@ export const bookvalidation = [
         .isNumeric().withMessage('El campo genre_id debe contener solo números')
         .notEmpty().withMessage('El campo genre_id es requerido !!'),
 ]
+
+export const reviewvalidation = [
+    body('rating')
+        .isInt({min:1,max:5}).withMessage('El campo rating solo acepta números del 1 al 5')
+        .notEmpty().withMessage('El campo rating es requerido !!'),
+    body('book_id')
+        .isInt().withMessage('El campo book_id solo debe contener solo números')
+        .notEmpty().withMessage('El campo book_id es requerido !!'),
+    body('user_id')
+        .isInt().withMessage('El campo user_id solo debe contener solo números')
+        .notEmpty().withMessage('El campo user_id es requerido !!')
+]

@@ -61,6 +61,13 @@ export const getBooksReviewById = async (req:Request,resp:Response) =>{
 
         const data = await bookreviewsQuery.getMany();
 
+        if(data.length === 0){
+            return resp.status(400).json({
+                status:false,
+                message:`El id:${idbookreview} no existe`
+            })
+        }
+
         return resp.status(200).json({
             status:true,
             menssage:data

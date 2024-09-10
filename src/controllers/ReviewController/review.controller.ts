@@ -46,3 +46,32 @@ export const allBooksReviews = async (req:Request,resp:Response) =>{
         }) 
     }
 }
+
+export const getBooksReviewById = async (req:Request,resp:Response) =>{
+    try {
+        const { id } = req.params;
+        let idbookreview = parseInt(id,10);
+
+        const reviewsRepository = AppDataSource.getRepository(ReviewsEntity);
+
+        const bookreviewsQuery = reviewsRepository.createQueryBuilder("Reviews")
+        .innerJoinAndSelect('Reviews.books','Books')
+        .innerJoinAndSelect('Reviews.user','Users')
+        .where({ id: idbookreview })
+
+        const data = await bookreviewsQuery.getMany();
+
+        return resp.status(200).json({
+            status:true,
+            menssage:data
+        })
+
+    } catch (error) {
+        console.log(error);
+        
+        return resp.status(400).json({
+            status:false,
+            message:'Porfavor vuelva a intentar, algo salio mal :('
+        }) 
+    }
+}

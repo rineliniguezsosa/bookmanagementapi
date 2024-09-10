@@ -19,6 +19,6 @@ export class PublisherEntity {
     @Column({type:'timestamp'})
     created_at!:Date
 
-    @OneToMany(()=> BooksEntity,(book)=> book.publisher_id)
+    @OneToMany(()=> BooksEntity,(book)=> book.publisher)
     books!:BooksEntity[]
 }

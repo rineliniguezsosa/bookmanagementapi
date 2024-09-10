@@ -5,3 +5,4 @@ export const bookRoutes = Router();
 
 bookRoutes.post('/save',bookvalidation)
 bookRoutes.get('/all',allBooks)
+bookRoutes.get('/:id')

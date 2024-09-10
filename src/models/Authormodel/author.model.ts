@@ -21,6 +21,6 @@ export class AuthorsEntity {
     @Column({type:'timestamp'})
     created_at!:Date
 
-    @OneToMany(()=> BooksEntity,(book)=> book.author_id)
+    @OneToMany(()=> BooksEntity,(book)=> book.author)
     books!:BooksEntity[]
 }   

@@ -1,7 +1,7 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import { connectdb } from './config/connectdb';
-import { userRoutes,bookgenresRoutes,publisherRoutes,authorRoutes, bookRoutes } from './routes';
+import { userRoutes,bookgenresRoutes,publisherRoutes,authorRoutes, bookRoutes, reviewRoutes } from './routes';
 
 dotenv.config()
 
@@ -12,6 +12,7 @@ app.use('/bookgenre',bookgenresRoutes)
 app.use('/publishers',publisherRoutes)
 app.use('/authors',authorRoutes)
 app.use('/book',bookRoutes)
+app.use('/reviews',reviewRoutes)
 connectdb()
 
 app.listen(process.env.PORT,()=>{

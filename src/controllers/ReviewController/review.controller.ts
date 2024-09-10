@@ -27,8 +27,8 @@ export const allBooksReviews = async (req:Request,resp:Response) =>{
         const reviewsRepository = AppDataSource.getRepository(ReviewsEntity);
 
         const bookreviewsQuery = reviewsRepository.createQueryBuilder("Reviews")
-        .innerJoinAndSelect('Books.books','Books')
-        .innerJoinAndSelect('Books.user','Users')
+        .innerJoinAndSelect('Reviews.books','Books')
+        .innerJoinAndSelect('Reviews.user','Users')
 
         const data = await bookreviewsQuery.getMany();
 
